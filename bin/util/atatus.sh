@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 install_atatus_ext() {
-    # special treatment for New Relic; we enable it if we detect a license key for it
+    # special treatment for Atatus; we enable it if we detect a license key for it
     # otherwise users would have to have it in their require section, which is annoying in development environments
     ATATUS_LICENSE_KEY=${ATATUS_LICENSE_KEY:-}
     if [[ -n "$ATATUS_LICENSE_KEY" ]] && ! php -n $(which composer1) show -d "$build_dir/.heroku/php" --installed --quiet heroku-sys/ext-atatus 2>/dev/null; then
